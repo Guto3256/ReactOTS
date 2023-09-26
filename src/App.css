@@ -5,22 +5,4 @@
   text-align: center;
 }
 
-.card {
-  border: 1px solid #fff;
-  padding: 1rem;
-  border-radius: 1rem;
-  transition: 0.115s;
-}
 
-.card:hover{
-  box-shadow: 0.2rem 0.2rem #fff;
-  translate: -0.2rem -0.2rem;
-}
-
-.card > h2{
-  font-size: 2rem;
-}
-
-.card > img{
-  border-radius: 1rem;
-}
