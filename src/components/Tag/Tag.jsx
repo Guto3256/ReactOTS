@@ -2,17 +2,11 @@ import './Tag.css'
 import PropTypes from 'prop-types';
 
 function Tag(props){
-    const item = {
-        nome: props.nome,
-        valor: props.valor
-    }
-
-    return <div className="tag">{item.nome}: {item.valor}</div>
+    return <div className="tag">{props.tag}</div>
 }
 
 Tag.propTypes = {
-    nome: PropTypes.shape(),
-    valor: PropTypes.shape()
-}
+    tag: PropTypes.string.isRequired,
+};
 
 export default Tag

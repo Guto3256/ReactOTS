@@ -1,0 +1,16 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 1rem;
+}
+
+.header > a,
+.header > div{
+    display: flex;
+    align-items: center;
+}
+
+.header > div a{
+    padding: 0 1rem;
+}

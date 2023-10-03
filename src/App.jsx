@@ -1,9 +1,11 @@
+import { useEffect, useState } from 'react';
 import './App.css'
 import Card from './components/Card/Card'
+import Header from './components/Header/Header';
 
 
 function App() {
-  const item1 = {
+  /*const item1 = {
     nome: 'Rick Sanchez',
     imageUrl: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
     tags: {
@@ -43,13 +45,33 @@ function App() {
     }
   }
 
-  const itens = [item1, item2, item3, item4];
+  const itens = [item1, item2, item3, item4];*/
+
+  // TODO: Implementar lista de itens
+  const [itens, setItens] = useState([])
+
+  async function carregarDadosApi(){
+    const response = await fetch("https://rickandmortyapi.com/api/character/");
+
+    const json = await response.json();
+
+    const results = json.results;
+
+    setItens(results);
+  }
+
+  useEffect(function(){
+    carregarDadosApi();
+  }, [])
 
   return (
     <>
-      {itens.map((item, index) => {
-        return <Card key={index} personagem={item}/>
-      })}
+      <Header />
+      <div className='card-list'>
+        {itens.map((item, index) => {
+          return <Card key={`card_${index}`} personagem={item}/>
+        })}
+      </div>
     </>
   )
 }
